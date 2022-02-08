@@ -1,5 +1,11 @@
-TITLE ~ 
-DATE ~ 
-LENGTH ~ 
-READBY ~ 
-DESCRIPTION ~ 
+TITLE ~ undefined
+EPISODENUMBER ~ 000
+RELEASEDATE ~ YYYYMMDD
+LENGTH ~ HH:MM:SS
+READBY ~ undefined
+DESCRIPTION ~ undefined
+NARRATOR ~ undefined
+STORYDATE ~ undefined
+LOCATION ~ undefined
+CHARACTERS ~ undefined
+THEMES ~ undefined
