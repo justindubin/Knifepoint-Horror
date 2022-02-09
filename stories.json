@@ -1,0 +1,43 @@
+[
+    {
+        "title": "town",
+        "author": "Soren Narnia",
+        "episode_num": 0,
+        "release_date": 20101122,
+        "length": "00:53:55",
+        "read_by": "Dennis Smith",
+        "description": "An unwitting videographer is drawn into a mysterious researcher's day-long journey through a small place on the brink of total possession.",
+        "narrator": "William Royden",
+        "time_frame": "October 2005",
+        "location": "Robinsong, VA",
+        "characters": [
+            "Forsh Cording",
+            "Steen",
+            "Irwin Suttle",
+            "Sarah",
+            "Mr. Cokeland",
+            "Mr. Cokeland's son",
+            "Steve",
+            "William Royden"
+        ],
+        "themes": [
+            "ressurection",
+            "murder",
+            "mental illness"
+        ]
+    },
+    {
+        "title": "corpse",
+        "author": "Soren Narnia",
+        "episode_num": 1,
+        "release_date": 20101125,
+        "length": "00:13:11",
+        "read_by": "Mike Vendetti",
+        "description": "The corpse of a remorseless killer refuses to decay, breaking the sanity of a dangerous man who becomes obsessed with it.",
+        "narrator": "",
+        "time_frame": "",
+        "location": "",
+        "characters": [],
+        "themes": []
+    }
+]
