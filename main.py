@@ -16,12 +16,7 @@ for story in stories:
 
         # Create a character sheet if none exists
         character_sheet_filename = character.lower().replace(" ", "_").replace(".", "").replace("'", "")
-        cs_default_data = {
-            "name": character,
-            "age": None,
-            "summary": None,
-            "mentions": []
-        }
+        cs_default_data = {"name": character, "age": None, "summary": None, "mentions": []}
         cs_file_dir = os.path.join("Character_Sheets", character_sheet_filename + ".json")
         if not os.path.isfile(cs_file_dir):
             with open(cs_file_dir, "w") as cs_file:
