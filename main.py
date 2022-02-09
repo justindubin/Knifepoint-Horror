@@ -15,7 +15,7 @@ for story in stories:
     for character in story.synopsis["characters"]:
 
         # Create a character sheet if none exists
-        character_sheet_filename = character.lower().replace(" ", "_")
+        character_sheet_filename = character.lower().replace(" ", "_").replace(".", "").replace("'", "")
         cs_default_data = {
             "name": character,
             "age": None,
@@ -27,11 +27,12 @@ for story in stories:
             with open(cs_file_dir, "w") as cs_file:
                 json.dump(cs_default_data, cs_file, indent=4)
 
+        # Update story mentions for each character
         with open(cs_file_dir, "r+") as cs_file:
             cs_data = json.load(cs_file)
-            cs_data["mentions"].append(story.synopsis["title"])
+            if story.synopsis["title"] not in cs_data["mentions"]:
+                cs_data["mentions"].append(story.synopsis["title"])
             cs_file.seek(0)
             json.dump(cs_data, cs_file, indent=4)
-            cs_file.truncate()
 
 pass
