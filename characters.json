@@ -1,7 +1,15 @@
 [
     {
-        "name": "forsh cording",
+        "name": "blind girl",
         "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "forsh cording",
+        "age": "35",
         "description": "",
         "mentions": [
             "town"
@@ -32,8 +40,16 @@
         ]
     },
     {
-        "name": "sarah",
+        "name": "playground boy",
         "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "sarah",
+        "age": "<1",
         "description": "",
         "mentions": [
             "town"
@@ -56,15 +72,7 @@
         ]
     },
     {
-        "name": "the blind girl",
-        "age": "unknown",
-        "description": "",
-        "mentions": [
-            "town"
-        ]
-    },
-    {
-        "name": "the white crocodile",
+        "name": "white creature",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -73,6 +81,14 @@
     },
     {
         "name": "william royden",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "william royden's grandfather",
         "age": "unknown",
         "description": "",
         "mentions": [
