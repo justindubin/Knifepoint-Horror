@@ -1,64 +1,80 @@
 [
     {
-        "name": "Forsh Cording",
-        "age": 0,
-        "summary": "",
+        "name": "forsh cording",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Steen",
-        "age": 0,
-        "summary": "",
+        "name": "irwin suttle",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Irwin Suttle",
-        "age": 0,
-        "summary": "",
+        "name": "mr. cokeland",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Sarah",
-        "age": 0,
-        "summary": "",
+        "name": "mr. cokeland's son",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Mr. Cokeland",
-        "age": 0,
-        "summary": "",
+        "name": "sarah",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Mr. Cokeland's son",
-        "age": 0,
-        "summary": "",
+        "name": "steen",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "Steve",
-        "age": 0,
-        "summary": "",
+        "name": "steve",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
     },
     {
-        "name": "William Royden",
-        "age": 0,
-        "summary": "",
+        "name": "the blind girl",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "the white crocodile",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "william royden",
+        "age": "unknown",
+        "description": "",
         "mentions": [
             "town"
         ]
