@@ -34,6 +34,7 @@ def main():
 
         # Remove duplicate characters in stories file
         story["characters"] = list(set([char.lower() for char in story["characters"]]))
+        story["themes"] = list(set([theme.lower() for theme in story["themes"]]))
 
         # Alphabetize characters and themes in story data sheet
         story["characters"].sort()
