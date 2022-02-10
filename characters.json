@@ -1,22 +1,6 @@
 [
     {
-        "name": "blind girl",
-        "age": "6",
-        "description": "",
-        "mentions": [
-            "town"
-        ]
-    },
-    {
-        "name": "forsh cording",
-        "age": "35",
-        "description": "",
-        "mentions": [
-            "town"
-        ]
-    },
-    {
-        "name": "irwin suttle",
+        "name": "Blind Girl",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -24,7 +8,7 @@
         ]
     },
     {
-        "name": "mr. cokeland",
+        "name": "Cokeland",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -32,7 +16,7 @@
         ]
     },
     {
-        "name": "mr. cokeland's son",
+        "name": "Cokeland's son",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -40,23 +24,7 @@
         ]
     },
     {
-        "name": "playground boy",
-        "age": "8",
-        "description": "",
-        "mentions": [
-            "town"
-        ]
-    },
-    {
-        "name": "sarah",
-        "age": "<1",
-        "description": "",
-        "mentions": [
-            "town"
-        ]
-    },
-    {
-        "name": "steen",
+        "name": "Daniel Catrell",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -64,7 +32,7 @@
         ]
     },
     {
-        "name": "steve",
+        "name": "Forsh Cording",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -72,7 +40,7 @@
         ]
     },
     {
-        "name": "white creature",
+        "name": "Gretchen Plowzer",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -80,7 +48,7 @@
         ]
     },
     {
-        "name": "william royden",
+        "name": "Irwin Settle",
         "age": "unknown",
         "description": "",
         "mentions": [
@@ -88,7 +56,47 @@
         ]
     },
     {
-        "name": "william royden's grandfather",
+        "name": "Sarah",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "Steen",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "Steve",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "White Creature",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "William Royden",
+        "age": "unknown",
+        "description": "",
+        "mentions": [
+            "town"
+        ]
+    },
+    {
+        "name": "William Royden's grandfather",
         "age": "unknown",
         "description": "",
         "mentions": [
