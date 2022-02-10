@@ -60,7 +60,7 @@ def main():
             elif character["name"] not in story["characters"] and story["title"] in character["mentions"]:
                 character["mentions"].remove(story["title"])
 
-        # Alphabetize character entries in character data sheet
+        # Alphabetize character entries in character data sheet  ToDo: Also by episode number (link to title)
         characters = sorted(characters, key=lambda d: d["name"])
 
     # Remove character objects not present in any story object
