@@ -50,7 +50,7 @@ def main():
 
     # Welcome message
     t_start = time.perf_counter()
-    welcome_message = "\n-----RUNNING THE KPH JSON FILE UPDATE SCRIPT-----"
+    welcome_message = f"\n{'-'*10}RUNNING THE KPH JSON FILE UPDATE SCRIPT{'-'*10}"
     print(welcome_message)
 
     # Decode JSON data
@@ -109,7 +109,8 @@ def main():
 
             # Read descriptions from char_desc files
             with open(char_file_dir, "r") as char_file:
-                character_datapack.append((story_character, char_file.read(), char_file_dir))
+                file_text = char_file.read().replace("\n", " ")
+                character_datapack.append((story_character, file_text, char_file_dir))
 
         # Alert for near-duplicates
         if len(near_duplicates) > 0:
@@ -142,7 +143,7 @@ def main():
                             txt_text = char_file_desc
                             print(f"\nCHARACTER: {character['name']}\nMENTIONS: {', '.join(character['mentions'])}")
                             print("~"*40)
-                            print(f"JSON description: '{json_text}'")
+                            print(f"JSON description: '{json_text}'\n")
                             print(f"TXT description: '{txt_text}'")
                             overwrite = input("\nWhich description is correct? (json/txt): ")
                             if overwrite.lower() == "json":
