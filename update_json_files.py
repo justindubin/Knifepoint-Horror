@@ -91,7 +91,7 @@ def main():
             with open(char_desc_dir, "r") as char_desc:
                 character_descriptions.append((story_character, char_desc.read()))
 
-        # Alert near-duplicates
+        # Alert for near-duplicates
         if len(near_duplicates) > 0:
             desc_string = "The following characters are listed more than once in their story object:"
             title_string = "! NEAR-DUPLICATE(S) DETECTED !"
@@ -118,7 +118,7 @@ def main():
         # Alphabetize character entries in character data sheet  ToDo: Also by episode number (link to title)
         characters = sorted(characters, key=lambda d: d["name"])
 
-    # Alert character objects not present in any story object
+    # Alert for character objects not present in any story object
     unmentioned_characters = [c["name"] for c in characters if c["name"] not in all_story_characters]
     if len(unmentioned_characters) > 0:
         desc_string = "The following characters don't belong to any story object:"
