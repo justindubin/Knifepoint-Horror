@@ -1,7 +1,7 @@
 [
     {
         "name": "Blind Girl",
-        "age": "unknown",
+        "age": "unknown/teenaged",
         "description": "Replace this text with a description of Blind Girl",
         "mentions": [
             "town"
@@ -9,7 +9,7 @@
     },
     {
         "name": "Cokeland",
-        "age": "unknown",
+        "age": "unknown/middle-aged",
         "description": "Replace this text with a description of Cokeland",
         "mentions": [
             "town"
@@ -17,7 +17,7 @@
     },
     {
         "name": "Cokeland's son",
-        "age": "unknown",
+        "age": "unknown/early 20's",
         "description": "Replace this text with a description of Cokeland's son",
         "mentions": [
             "town"
@@ -25,7 +25,7 @@
     },
     {
         "name": "Daniel Catrell",
-        "age": "unknown",
+        "age": "9",
         "description": "Replace this text with a description of Daniel Catrell",
         "mentions": [
             "town"
@@ -57,7 +57,7 @@
     },
     {
         "name": "Sarah",
-        "age": "unknown",
+        "age": "infant",
         "description": "Replace this text with a description of Sarah",
         "mentions": [
             "town"
@@ -73,7 +73,7 @@
     },
     {
         "name": "Steve",
-        "age": "unknown",
+        "age": "mid-to-late 20's",
         "description": "Replace this text with a description of Steve",
         "mentions": [
             "town"
