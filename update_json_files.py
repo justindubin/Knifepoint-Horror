@@ -1,9 +1,9 @@
 # IMPORTS
 import os
 import copy
+import json
 import time
 from datetime import timedelta
-import json
 
 
 # FUNCTIONS
