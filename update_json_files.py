@@ -1,5 +1,6 @@
 # IMPORTS
 import os
+import copy
 import json
 
 
@@ -54,14 +55,22 @@ def main():
         story["characters"].sort()
         story["themes"].sort()
 
-        # Create character entry if none exists
+        # Check character information
         logged_characters = [char["name"].lower() for char in characters]
         character_descriptions = []
+        near_duplicates = []
         for story_character in story["characters"]:
             all_story_characters.append(story_character)
-            if story_character.lower() not in logged_characters:
 
-                # Create a new character object
+            # Check for near-duplicates
+            check_bin = copy.copy(story["characters"])
+            check_bin.remove(story_character)
+            check_bin = [c.lower() for c in check_bin]
+            if story_character.lower() in check_bin:
+                near_duplicates.append(story_character)
+
+            # Create character entry if none exists
+            if story_character.lower() not in logged_characters:
                 new_character = {
                     "name": story_character,
                     "age": "unknown",
@@ -82,10 +91,25 @@ def main():
             with open(char_desc_dir, "r") as char_desc:
                 character_descriptions.append((story_character, char_desc.read()))
 
+        # Alert for near-duplicates
+        if len(near_duplicates) > 0:
+            desc_string = "The following characters are listed more than once in their story object:"
+            title_string = "! NEAR-DUPLICATE(S) DETECTED !"
+            print()
+            print("-" * len(desc_string))
+            print(title_string.center(len(desc_string)))
+            print("-" * len(desc_string))
+            print(desc_string)
+            for near_duplicate in near_duplicates:
+                print(f"  + {near_duplicate}")
+
         # Update character information
-        for character in characters:  # ToDo: bug on story iteration
+        for character in characters:
             if len(character_descriptions) > 0:
-                character["description"] = [cd[1] for cd in character_descriptions if cd[0] == character["name"]][0]
+                for char_name, char_desc in character_descriptions:
+                    if char_name == character["name"]:
+                        character["description"] = char_desc
+                        continue
             if character["name"] in story["characters"] and story["title"] not in character["mentions"]:
                 character["mentions"].append(story["title"])
             elif character["name"] not in story["characters"] and story["title"] in character["mentions"]:
@@ -98,7 +122,7 @@ def main():
     unmentioned_characters = [c["name"] for c in characters if c["name"] not in all_story_characters]
     if len(unmentioned_characters) > 0:
         desc_string = "The following characters don't belong to any story object:"
-        title_string = "! UNMENTIONED CHARACTER(S) ALERT !"
+        title_string = "! UNMENTIONED CHARACTER(S) DETECTED !"
         print()
         print("-"*len(desc_string))
         print(title_string.center(len(desc_string)))
