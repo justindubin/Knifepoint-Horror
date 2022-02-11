@@ -1,6 +1,8 @@
 # IMPORTS
 import os
 import copy
+import time
+from datetime import timedelta
 import json
 
 
@@ -9,7 +11,7 @@ def load_dump_json(filename: str, action: str, dump_data=None, indent=2):
 
     # Create file if none exists
     if not os.path.isfile(filename) and action == "load":
-        print(f"\nNo file '{filename}' exists\n > Creating empty JSON array...")
+        print(f"No '{filename}' file exists!\n >>> Creating empty JSON array", end=" ... ")
         with open(filename, "w") as file_obj:
             json.dump([], file_obj, indent=indent)
 
@@ -27,11 +29,15 @@ def load_dump_json(filename: str, action: str, dump_data=None, indent=2):
 
 
 def conform_naming(name: str):
+
+    # Convert character name to acceptable filename string
     compatible_name = name.lower().replace(" ", "_").replace(".", "").replace("'", "")
     return compatible_name
 
 
 def throw_alert(title_string, info_string):
+
+    # Send an alert to the console
     print()
     print("-" * len(info_string))
     print(title_string.center(len(info_string)))
@@ -43,12 +49,15 @@ def throw_alert(title_string, info_string):
 def main():
 
     # Welcome message
-    print("\n--- RUNNING THE KPH JSON FILE UPDATE SCRIPT ---")
+    t_start = time.perf_counter()
+    welcome_message = "\n-----RUNNING THE KPH JSON FILE UPDATE SCRIPT-----"
+    print(welcome_message)
 
     # Decode JSON data
+    print("\nDecoding JSON data into memory", end=" ... ")
     stories = load_dump_json(filename="stories.json", action="load")
     characters = load_dump_json(filename="characters.json", action="load")
-    print("\n > JSON data loaded into memory")
+    print("Success")
 
     # Build/update character sheets
     all_story_characters = []
@@ -175,10 +184,17 @@ def main():
             print(" --- No characters deleted")
 
     # Encode JSON data
+    print("\nEncoding JSON data to file", end=" ... ")
     load_dump_json(filename="stories.json", action="dump", dump_data=stories, indent=4)
     load_dump_json(filename="characters.json", action="dump", dump_data=characters, indent=4)
+    print("Success\n")
 
-    print("\n > JSON data files updated successfully")
+    # Print runtime
+    t_stop = time.perf_counter()
+    runtime_seconds = t_stop - t_start
+    goodbye_message = "PROCESS TERMINATED"
+    print(goodbye_message.center(len(welcome_message), "-"))
+    print(f"\nRuntime (HH:MM:SS) = {timedelta(seconds=runtime_seconds)}\n")
 
 
 # ENTRY POINT
