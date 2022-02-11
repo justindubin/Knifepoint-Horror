@@ -84,7 +84,8 @@ def main():
 
         # Update character information
         for character in characters:  # ToDo: bug on story iteration
-            character["description"] = [cd[1] for cd in character_descriptions if cd[0] == character["name"]][0]
+            if len(character_descriptions) > 0:
+                character["description"] = [cd[1] for cd in character_descriptions if cd[0] == character["name"]][0]
             if character["name"] in story["characters"] and story["title"] not in character["mentions"]:
                 character["mentions"].append(story["title"])
             elif character["name"] not in story["characters"] and story["title"] in character["mentions"]:
