@@ -41,7 +41,7 @@
     },
     {
         "name": "Gretchen Plowzer",
-        "age": "unknown",
+        "age": "10",
         "description": "Replace this text with a description of Gretchen Plowzer",
         "mentions": [
             "town"
