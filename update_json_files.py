@@ -8,7 +8,7 @@ import json
 def load_dump_json(filename: str, action: str, dump_data=None, indent=2):
 
     # Create file if none exists
-    if not os.path.isfile(filename):
+    if not os.path.isfile(filename) and action == "load":
         print(f"\nNo file '{filename}' exists\n > Creating empty JSON array...")
         with open(filename, "w") as file_obj:
             json.dump([], file_obj, indent=indent)
@@ -31,13 +31,24 @@ def conform_naming(name: str):
     return compatible_name
 
 
+def throw_alert(title_string, info_string):
+    print()
+    print("-" * len(info_string))
+    print(title_string.center(len(info_string)))
+    print("-" * len(info_string))
+    print(info_string)
+
+
 # MAIN
 def main():
+
+    # Welcome message
+    print("\n--- RUNNING THE KPH JSON FILE UPDATE SCRIPT ---")
 
     # Decode JSON data
     stories = load_dump_json(filename="stories.json", action="load")
     characters = load_dump_json(filename="characters.json", action="load")
-    print("\nJSON data loaded into memory...")
+    print("\n > JSON data loaded into memory")
 
     # Build/update character sheets
     all_story_characters = []
@@ -57,7 +68,7 @@ def main():
 
         # Check character information
         logged_characters = [char["name"].lower() for char in characters]
-        character_descriptions = []
+        character_datapack = []
         near_duplicates = []
         for story_character in story["characters"]:
             all_story_characters.append(story_character)
@@ -69,7 +80,7 @@ def main():
             if story_character.lower() in check_bin:
                 near_duplicates.append(story_character)
 
-            # Create character entry if none exists
+            # Create character object if none exists
             if story_character.lower() not in logged_characters:
                 new_character = {
                     "name": story_character,
@@ -79,55 +90,81 @@ def main():
                 }
                 characters.append(new_character)
 
-            # Create a new character description file if none exists
-            char_fname = conform_naming(story_character)
-            char_desc_dir = f"char_desc/{char_fname}.txt"
-            if not os.path.isfile(char_desc_dir):
+            # Create a new character description text file if none exists
+            char_filename = conform_naming(story_character)
+            char_file_dir = f"char_desc/{char_filename}.txt"
+            if not os.path.isfile(char_file_dir):
                 default_text = f"Replace this text with a description of {story_character}"
-                with open(char_desc_dir, "w") as char_desc:
-                    char_desc.write(default_text)
+                with open(char_file_dir, "w") as char_file:
+                    char_file.write(default_text)
 
-            # Add description from char_desc file
-            with open(char_desc_dir, "r") as char_desc:
-                character_descriptions.append((story_character, char_desc.read()))
+            # Read descriptions from char_desc files
+            with open(char_file_dir, "r") as char_file:
+                character_datapack.append((story_character, char_file.read(), char_file_dir))
 
         # Alert for near-duplicates
         if len(near_duplicates) > 0:
-            desc_string = "The following characters are listed more than once in their story object:"
             title_string = "! NEAR-DUPLICATE(S) DETECTED !"
-            print()
-            print("-" * len(desc_string))
-            print(title_string.center(len(desc_string)))
-            print("-" * len(desc_string))
-            print(desc_string)
+            info_string = "The following characters are listed more than once in their story object:"
+            throw_alert(title_string=title_string, info_string=info_string)
             for near_duplicate in near_duplicates:
                 print(f"  + {near_duplicate}")
 
         # Update character information
         for character in characters:
-            if len(character_descriptions) > 0:
-                for char_name, char_desc in character_descriptions:
+
+            # Character descriptions
+            if len(character_datapack) > 0:
+                for char_name, char_file_desc, char_file_dir in character_datapack:
                     if char_name == character["name"]:
-                        character["description"] = char_desc
+                        if character["description"].split(" ")[0] == "Replace" or character["description"] == "":
+                            # Safe to overwrite JSON file
+                            character["description"] = char_file_desc
+                        elif char_file_desc.split(" ")[0] == "Replace" or char_file_desc == "":
+                            # Safe to overwrite TXT file
+                            with open(char_file_dir, "w") as char_file:
+                                char_file.write(character["description"])
+                        elif character["description"] != char_file_desc:
+                            # Warn of potential data loss
+                            title_string = "! DATA LOSS WARNING !"
+                            info_string = "Description clash detected between JSON and TXT files"
+                            throw_alert(title_string=title_string, info_string=info_string)
+                            json_text = character["description"]
+                            txt_text = char_file_desc
+                            print(f"\nCHARACTER: {character['name']}\nMENTIONS: {', '.join(character['mentions'])}")
+                            print("~"*40)
+                            print(f"JSON description: '{json_text}'")
+                            print(f"TXT description: '{txt_text}'")
+                            overwrite = input("\nWhich description is correct? (json/txt): ")
+                            if overwrite.lower() == "json":
+                                with open(char_file_dir, "w") as char_file:
+                                    char_file.write(json_text)
+                                print(f" --- {char_file_dir} updated")
+                            elif overwrite.lower() == "txt":
+                                character["description"] = txt_text
+                                print(f" --- JSON object updated")
+                            else:
+                                print(f" --- No changes made")
+                        else:
+                            # No need for update
+                            pass
                         continue
+
+            # Story mentions
             if character["name"] in story["characters"] and story["title"] not in character["mentions"]:
                 character["mentions"].append(story["title"])
             elif character["name"] not in story["characters"] and story["title"] in character["mentions"]:
                 character["mentions"].remove(story["title"])
 
-        # Alphabetize character entries in character data sheet  ToDo: Also by episode number (link to title)
+        # Alphabetize character entries in character data sheet
         characters = sorted(characters, key=lambda d: d["name"])
 
     # Alert for character objects not present in any story object
     unmentioned_characters = [c["name"] for c in characters if c["name"] not in all_story_characters]
     if len(unmentioned_characters) > 0:
-        desc_string = "The following characters don't belong to any story object:"
         title_string = "! UNMENTIONED CHARACTER(S) DETECTED !"
-        print()
-        print("-"*len(desc_string))
-        print(title_string.center(len(desc_string)))
-        print("-"*len(desc_string))
-        print(desc_string)
+        info_string = "The following characters don't belong to any story object:"
+        throw_alert(title_string=title_string, info_string=info_string)
         for unmentioned_character in unmentioned_characters:
             print(f"  + {unmentioned_character}")
         delete_extras = input("\nDelete unmentioned characters? (y/n): ")
@@ -141,7 +178,7 @@ def main():
     load_dump_json(filename="stories.json", action="dump", dump_data=stories, indent=4)
     load_dump_json(filename="characters.json", action="dump", dump_data=characters, indent=4)
 
-    print("\nJSON data files updated successfully...")
+    print("\n > JSON data files updated successfully")
 
 
 # ENTRY POINT
