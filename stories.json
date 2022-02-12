@@ -2,28 +2,30 @@
     {
         "title": "town",
         "author": "Soren Narnia",
-        "episode_num": 0,
+        "episode_num": 1,
+        "book_volume": 1,
         "release_date": 20101122,
         "length": "00:53:55",
         "read_by": "Dennis Smith",
         "description": "An unwitting videographer is drawn into a mysterious researcher's day-long journey through a small place on the brink of total possession.",
-        "narrator": "William Royden",
+        "narrator": "William Roydon",
         "time_frame": "October 9th, 2005",
-        "location": "Robinsong, Virginia",
+        "location": "Robin Song, Virginia",
         "characters": [
             "Blind Girl",
-            "Cokeland",
-            "Cokeland's son",
             "Daniel Catrell",
-            "Forsh Cording",
-            "Gretchen Plowzer",
+            "Forsch Cording",
+            "Gretchen Plauser",
             "Irwin Settle",
+            "Mr. Coaklin",
+            "Mr. Coaklin's son",
             "Sarah",
             "Steen",
             "Steve",
+            "Trent",
             "White Creature",
-            "William Royden",
-            "William Royden's grandfather"
+            "William Roydon",
+            "William Roydon's grandfather"
         ],
         "themes": [
             "haunted town",
@@ -35,7 +37,8 @@
     {
         "title": "corpse",
         "author": "Soren Narnia",
-        "episode_num": 1,
+        "episode_num": 2,
+        "book_volume": null,
         "release_date": 20101125,
         "length": "00:13:11",
         "read_by": "Mike Vendetti",
@@ -44,6 +47,9 @@
         "time_frame": "",
         "location": "",
         "characters": [],
-        "themes": []
+        "themes": [
+            "insanity",
+            "murder"
+        ]
     }
 ]

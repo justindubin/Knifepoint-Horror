@@ -93,7 +93,6 @@ def main():
             if story_character.lower() not in logged_characters:
                 new_character = {
                     "name": story_character,
-                    "age": "unknown",
                     "description": "",
                     "mentions": [story["title"]]
                 }
