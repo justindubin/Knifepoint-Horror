@@ -2,7 +2,6 @@
     {
         "title": "town",
         "author": "Soren Narnia",
-        "episode_num": 1,
         "book_volume": 1,
         "release_date": 20101122,
         "length": "00:53:55",
@@ -37,8 +36,7 @@
     {
         "title": "corpse",
         "author": "Soren Narnia",
-        "episode_num": 2,
-        "book_volume": null,
+        "book_volume": 2,
         "release_date": 20101125,
         "length": "00:13:11",
         "read_by": "Mike Vendetti",
