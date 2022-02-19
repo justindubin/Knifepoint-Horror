@@ -94,7 +94,8 @@ def main():
                 new_character = {
                     "name": story_character,
                     "description": "",
-                    "mentions": [story["title"]]
+                    "mentions": [story["title"]],
+                    "book_only": False
                 }
                 characters.append(new_character)
 

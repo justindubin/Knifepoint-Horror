@@ -4,97 +4,111 @@
         "description": "Replace this text with a description of Blind Girl",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Daniel Catrell",
         "description": "Replace this text with a description of Daniel Catrell",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Forsch Cording",
-        "description": "Forsch Cording is a mysterious man with supposed clairvoyant abilities. He appears no older than 35, but evokes the aura of someone much older. Internet search of the man only yields the fact that he recently held post as a professor of ancient studies at the University of Toronto. On October 9th, 2005, Cording recruits a videographer named William Roydon to travel with him to the town of Robin Song, VA. His goal is to find, and put a stop to, the malevolent spirit of Gretchen Plowzer. Cording believes Plowzer's ghost is responsible for the dark and reprehensible events plaguing the town's history. A serious man, Cording speaks to Roydon in a calm, flat monotone. While in Robin Song he behaves very strangely; walking around, often aimlessly, while listening to something Roydon cannot hear. Cording eventually lets on that he is aware of numerous places like Robin Song and that his purpose is to help remedy such hauntings. A missing persons poster portraying Cording's image is seen by Roydon taped to the crumbling bedroom wall of Irwin Settle, a deranged man who was put to death in 1997 after the abduction and brutal murder of his psychiatrist, Dr. Steen. The 'last seen' date on the poster is the current date, October 9th, 2005. A few hours later, Cording is attacked by, who we assume to be, the spirit of Gretchen Plowzer. His fate is unknown.",
+        "description": "Forsch Cording is a tall, gaunt man with apparent clairvoyant ability. He appears no older than 35, but evokes the aura of someone much older. Internet search of the man yields that he recently held post as a professor of ancient studies at the University of Toronto and is vaguely associated with the Projet du M\u00e9ridional, which translates from French to English as the 'Southern Project'. An urban legend among fringe academics, Projet du M\u00e9ridional is associated with both the study of anthropology and the paranormal. It is supposedly funded privately by a group of five men, one of whom being Cording. A dubious-looking site reports that Cording has been traveling the world for the past two years researching a supposed curse that had stricken an Irish family. On October 9th, 2005, Cording recruits a videographer named William Roydon to travel with him to the town of Robin Song, VA. His goal is to find, and put a stop to, the malevolent spirit of Gretchen Plowzer. Cording believes Plowzer's ghost is responsible for the dark and reprehensible events plaguing the town's history. A serious man, Cording speaks to Roydon in a calm, flat monotone. While in Robin Song he behaves very strangely; walking around, often aimlessly, while listening to something Roydon cannot hear. Cording eventually lets on that he is aware of numerous places like Robin Song and that his purpose is to help remedy such hauntings, thus insinuating his involvement with Projet du M\u00e9ridional. A missing persons poster portraying Cording's image is seen by Roydon taped to the crumbling bedroom wall of Irwin Settle, a deranged man who was put to death in 1997 after the abduction and brutal murder of his psychiatrist, Dr. Steen. The 'last seen' date on the poster is the current date, October 9th, 2005. A few hours later, Cording is attacked by, who we assume to be, the spirit of Gretchen Plowzer. His fate is unknown.",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Gretchen Plauser",
         "description": "Replace this text with a description of Gretchen Plauser",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Irwin Settle",
         "description": "Replace this text with a description of Irwin Settle",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Mr. Coaklin",
         "description": "Replace this text with a description of Mr. Coaklin",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Mr. Coaklin's son",
         "description": "Replace this text with a description of Mr. Coaklin's son",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Sarah",
         "description": "Replace this text with a description of Sarah",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Steen",
         "description": "Replace this text with a description of Steen",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Steve",
         "description": "Replace this text with a description of Steve",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "Trent",
         "description": "Replace this text with a description of Trent",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": true
     },
     {
         "name": "White Creature",
         "description": "Replace this text with a description of White Creature",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "William Roydon",
         "description": "William Roydon is a videographer who has lived in Annapolis, MD since he was 13-years old. From ages 5-12 he lived with his family in the small town of Robin Song, VA where he attended Cotton Elementary for grades 1 through 6. Roydon has a grandfather who still lives in Robinsond that he visits on occasion. On October 9th, 2005, Roydon is paid $500 by a mysterious man named Forsch Cording to accompany him to Robin Song and assist in confronting the malevolent spirit of Gretchen Plowzer, who Cording believes is responsible for the strange and terrifying events experienced by the town's citizens. This task causes Roydon severe physical and psychological torment. He abandons his post and flees his hometown of Robin Song by train. He does not return, even to visit his grandfather.",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     },
     {
         "name": "William Roydon's grandfather",
         "description": "Replace this text with a description of William Roydon's grandfather",
         "mentions": [
             "town"
-        ]
+        ],
+        "book_only": false
     }
 ]
