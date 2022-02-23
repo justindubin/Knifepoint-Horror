@@ -59,7 +59,7 @@ def main():
     characters = load_dump_json(filename="characters.json", action="load")
     print("Success")
 
-    # Build/update character sheets
+    # Build/update both JSON files
     all_story_characters = []
     for story in stories:
 
